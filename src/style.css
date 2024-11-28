@@ -67,7 +67,7 @@ a{
     }
 }
 /* עיצוב רספונסיבי */
-@media (max-width: 650px) {
+@media (max-width: 500px) {
     .shop {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* התאמה דינאמית */
@@ -76,6 +76,10 @@ a{
     }
 
     .item {
+    width: 50%; /* התאמה לרוחב המיכל */
+    height: 80; /* גובה אחיד */
+    object-fit: cover; 
+    border-radius: 2px 2px 0 0;
         margin: 0 auto; /* מבטיח שהאובייקט יתיישר למרכז */
     }
 }
