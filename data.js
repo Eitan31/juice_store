@@ -51,14 +51,14 @@ let orangeJuice = new Product(
     "orange_juice",
     "תפוזים",
     29,
-    "תמונות/תפוזים.jpg",
+    "תפוזים.jpg",
     "מיץ תפוזים סחוט טבעי",
 );
 let lemonadeJuice = new Product(
     "lemonade_juice",
     "לימונדה",
     25,
-    "תמונות/לימונדה.png",
+    "לימונדה.png",
     "מיץ לימונדה סחוט טבעי",
 
 );
