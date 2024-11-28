@@ -61,28 +61,37 @@ a{
         grid-template-columns: repeat(3, 240px);
     }
 }
-@media (max-width: 700px){
-    .shop{
-        grid-template-columns: repeat(2, 240px);
-    }
-}
-/* עיצוב רספונסיבי */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .shop {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* התאמה דינאמית */
-        justify-content: center; /* יישור תוכן למרכז */
-        gap: 20px; /* רווחים קטנים יותר */
+        grid-template-columns: repeat(2, 1fr); /* שתי עמודות */
+        justify-content: center; /* מרכז את כל התוכן */
+        gap: 10px; /* רווח קטן יותר */
     }
 
     .item {
-    width: 50%; /* התאמה לרוחב המיכל */
-    height: 80; /* גובה אחיד */
-    object-fit: cover; 
-    border-radius: 2px 2px 0 0;
-        margin: 0 auto; /* מבטיח שהאובייקט יתיישר למרכז */
+        width: 90%; /* התאמה לרוחב המכשיר */
+        margin: 0 auto; /* מרכז את כל הפריטים */
+    }
+
+    .item img {
+        width: 100%; /* התאמת גודל התמונה לגודל הכרטיס */
+        height: auto; /* שומר על פרופורציות התמונה */
+        object-fit: cover; /* חיתוך אם צריך */
+        border-radius: 5px; /* פינות מעוגלות */
     }
 }
+
+@media (max-width: 500px) {
+    .shop {
+        grid-template-columns: 1fr; /* עמודה אחת */
+        gap: 15px;
+    }
+
+    .item {
+        width: 100%; /* רוחב מלא */
+    }
+}
+
 
 
 
