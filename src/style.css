@@ -67,7 +67,7 @@ a{
     }
 }
 /* עיצוב רספונסיבי */
-@media (max-width: 450px) {
+@media (max-width: 650px) {
     .shop {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* התאמה דינאמית */
