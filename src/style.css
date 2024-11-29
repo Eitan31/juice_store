@@ -29,7 +29,7 @@ a{
 }
 .cart {
     position: fixed; /* ישאיר את הסל באותה נקודה במסך */
-    top: 10px; /* מרחק מהחלק העליון */
+    left: 10px; /* מרחק מהחלק העליון */
     right: 10px; /* מרחק מהחלק הימני */
     background-color: #219ebc;
     color: #fb8500;
