@@ -53,16 +53,11 @@ a{
 }
 .shop{
     display: grid ;
-    grid-template-columns: repeat(4, 240px);
+    grid-template-columns: repeat(5, 240px);
     gap: 30px;
     margin-bottom: 50px;
 
 
-@media (max-width: 2000px){
-    .shop{
-        grid-template-columns: repeat(5, 240px);
-    }
-}
 @media (max-width: 1500){
     .shop{
         grid-template-columns: repeat(4, 240px);
