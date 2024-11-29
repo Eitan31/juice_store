@@ -27,14 +27,19 @@ a{
   align-items: center;
 
 }
-.cart{
-    position: relative;
+.cart {
+    position: fixed; /* ישאיר את הסל באותה נקודה במסך */
+    top: 10px; /* מרחק מהחלק העליון */
+    right: 10px; /* מרחק מהחלק הימני */
     background-color: #219ebc;
     color: #fb8500;
     padding: 5px;
     font-size: 30px;
     border-radius: 4px;
+    z-index: 1000; /* כדי לוודא שהוא מעל שאר האלמנטים */
 }
+
+
 .cartAmount{
     position: absolute;
     top: -10px;
