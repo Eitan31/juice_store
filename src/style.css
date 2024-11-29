@@ -288,4 +288,7 @@ a{
 .info-content p, .info-content-cart p {
     color: #4cc9f0; /* החלף בצבע הרצוי */
 }
+.info-content, .info-content-cart {
+    color: #4cc9f0; /* צבע לטקסט */
+}
 
