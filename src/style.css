@@ -72,6 +72,11 @@ a{
         grid-template-columns: repeat(5, 240px);
     }
 }
+@media (max-width: 1500){
+    .shop{
+        grid-template-columns: repeat(4, 240px);
+    }
+}
 @media (max-width: 1000px){
     .shop{
         grid-template-columns: repeat(3, 240px);
@@ -86,7 +91,7 @@ a{
 
 @media (max-width: 400px) {
     .shop {
-        grid-template-columns: repeat(2, 1fr); /* שתי עמודות */
+        grid-template-columns: repeat(1, 1fr); /* שתי עמודות */
         justify-content: center; /* מרכז את הרשת */
         gap: 10px; /* רווחים קטנים יותר */
     }
