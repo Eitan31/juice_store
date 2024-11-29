@@ -57,15 +57,6 @@ a{
     gap: 30px;
     margin-bottom: 50px;
 
-.shop {
-    display: grid;
-    grid-template-columns: repeat(4, 240px); /* ברירת מחדל: 4 פריטים בשורה */
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-
-
 
 @media (max-width: 2000px){
     .shop{
