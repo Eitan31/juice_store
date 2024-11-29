@@ -30,7 +30,7 @@ a{
 .cart {
     position: fixed; /* משאיר את הסל באותה נקודה במסך */
     top: 10px; /* מרחק מהחלק העליון */
-    left: 10px; /* מרחק מהחלק השמאלי */
+    left: 50px; /* מרחק מהחלק השמאלי */
     background-color: #219ebc;
     color: #fb8500;
     padding: 5px;
