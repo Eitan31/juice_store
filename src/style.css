@@ -94,12 +94,14 @@ a{
         height: auto; /* גובה יחסי */
         object-fit: cover; /* חיתוך נכון */
         margin: auto; /* מרכז תמונות */
+        aspect-ratio: 4/3;
     }
 
     .details {
         text-align: center; /* טקסט בפירוט ממורכז */
     }
 }
+
 
 
 
