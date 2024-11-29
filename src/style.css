@@ -53,7 +53,7 @@ a{
 }
 .shop {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* עיצוב רספונסיבי אוטומטי */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* התאמת גודל מינימלי ל-200 פיקסלים */
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -61,59 +61,47 @@ a{
 .item {
     border: 2px solid #fb8500;
     border-radius: 4px;
-    text-align: center; /* מרכז את התוכן בתוך כל פריט */
+    text-align: center;
+    padding: 10px; /* ריווח פנימי דינמי */
+    font-size: 16px; /* גודל טקסט רגיל */
 }
 
 .item img {
-    width: 100%; /* התאמה מלאה לרוחב הפריט */
-    height: auto; /* שמירת יחס רוחב-גובה */
-    object-fit: cover; /* התאמת תמונה לאזור */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
-/* רספונסיביות נוספת למסכים קטנים */
+/* רספונסיביות למסכים בינוניים */
 @media (max-width: 700px) {
     .shop {
-        gap: 15px; /* מרווחים קטנים יותר */
+        gap: 20px;
+    }
+    .item {
+        font-size: 14px; /* טקסט קטן יותר */
+        padding: 8px;
     }
     .item img {
-        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+        width: 100%;
+        aspect-ratio: 4/3; /* שמירה על יחס תמונה */
     }
 }
 
-
-
+/* רספונסיביות למסכים קטנים */
 @media (max-width: 400px) {
     .shop {
-        grid-template-columns: repeat(1, 1fr); 
-        justify-content: center; /* מרכז את הרשת */
-        gap: 10px; /* רווחים קטנים יותר */
+        gap: 10px; /* ריווח קטן יותר */
     }
-
     .item {
-        width: 80%; /* פריטים תופסים את כל הרוחב */
-        margin: 0 auto; /* ממורכזים במרכז */
-        text-align: center; /* טקסט ממורכז */
+        font-size: 12px; /* טקסט קטן אף יותר */
+        padding: 5px;
     }
-
     .item img {
-        width: 50%; /* התאמת הרוחב לתמונה */
-        height: auto; /* גובה יחסי */
-        object-fit: cover; /* חיתוך נכון */
-        margin: auto; /* מרכז תמונות */
-        aspect-ratio: 4/3;
-    }
-
-    .details {
-        text-align: center; /* טקסט בפירוט ממורכז */
+        width: 100%;
+        aspect-ratio: 16/9; /* התאמת יחס מסך צר */
     }
 }
-
-
-
-
-
-
-
 
 
 .item{
