@@ -29,8 +29,8 @@ a{
 }
 .cart {
     position: fixed; /* משאיר את הסל באותה נקודה במסך */
-    top: 10px; /* מרחק מהחלק העליון */
-    left: 50px; /* מרחק מהחלק השמאלי */
+    top: 30px; /* מרחק מהחלק העליון */
+    left: 150px; /* מרחק מהחלק השמאלי */
     background-color: #219ebc;
     color: #fb8500;
     padding: 5px;
