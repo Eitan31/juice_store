@@ -57,10 +57,6 @@ a{
     gap: 30px;
     margin-bottom: 50px;
 
-@media (max-width: 1800){
-    .shop{
-        grid-template-columns: repeat(5, 240px);
-    }
 
 @media (max-width: 1500){
     .shop{
@@ -81,7 +77,7 @@ a{
 
 @media (max-width: 400px) {
     .shop {
-        grid-template-columns: repeat(1, 1fr); /* שתי עמודות */
+        grid-template-columns: repeat(1, 1fr); 
         justify-content: center; /* מרכז את הרשת */
         gap: 10px; /* רווחים קטנים יותר */
     }
