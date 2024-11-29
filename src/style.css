@@ -69,26 +69,28 @@ a{
 @media (max-width: 700px) {
     .shop {
         grid-template-columns: repeat(2, 1fr); /* שתי עמודות */
-        justify-content: center; /* מרכז את כל התוכן */
-        gap: 10px; /* רווח קטן יותר */
+        justify-content: center; /* מרכז את הרשת */
+        gap: 10px; /* רווחים קטנים יותר */
     }
 
     .item {
-        width: 90%; /* התאמה לרוחב המכשיר */
-        margin: 0 auto; /* מרכז את כל הפריטים */
+        width: 100%; /* פריטים תופסים את כל הרוחב */
+        margin: 0 auto; /* ממורכזים במרכז */
+        text-align: center; /* טקסט ממורכז */
     }
 
     .item img {
-    width: 50%; /* התאמת הרוחב לכרטיס */
-    height: 100px; /* גובה אחיד לכל התמונות */
-    object-fit: cover; /* חיתוך התמונה כך שתתאים לממדים */
-    border-radius: 5px; /* פינות מעוגלות */
-    display: block; /* מבטיח שהתמונה לא תהיה inline */
-}
+        width: 80%; /* התאמת הרוחב לתמונה */
+        height: auto; /* גובה יחסי */
+        object-fit: cover; /* חיתוך נכון */
+        margin: auto; /* מרכז תמונות */
+    }
 
-        
+    .details {
+        text-align: center; /* טקסט בפירוט ממורכז */
     }
 }
+
 
 @media (max-width: 400px) {
     .shop {
