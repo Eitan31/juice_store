@@ -8,7 +8,6 @@ let calculation = () => {
     let cartIcon = document.getElementById("cartAmount");
     cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
-updateBasketAndCart();
 
 calculation();
 basket = basket.map(item => {
@@ -158,7 +157,6 @@ let increment = (id) => {
     // עדכון המידע הכולל
     calculation();
     totalAmount();
-    updateBasketAndCart();
 
 };
 
@@ -187,7 +185,6 @@ let decrement = (id) => {
 
     // שמירה ל-localStorage
     localStorage.setItem("data", JSON.stringify(basket));
-    updateBasketAndCart();
 
 };
 let update = (id) => {
@@ -208,7 +205,6 @@ let removeItem = (id) => {
     totalAmount();
     calculation();
     localStorage.setItem("data", JSON.stringify(basket));
-    updateBasketAndCart();
 
 
 
@@ -265,24 +261,3 @@ document.querySelectorAll('.info-icon').forEach(icon => {
         content.style.display = 'none'; // הסתרת המידע
     });
 });
-let updateCartInfo = () => {
-    let cartInfoContent = document.getElementById("cart-info-content");
-    if (basket.length === 0) {
-        cartInfoContent.innerHTML = "<p>סל הקניות ריק</p>";
-    } else {
-        cartInfoContent.innerHTML = basket.map(item => {
-            let product = shopItems.find(x => x.id === item.id);
-            return `
-                <p>
-                    <strong>${product.name}</strong> - 
-                    כמות: ${item.item}, מחיר: ${item.item * product.price}₪
-                </p>`;
-        }).join("");
-    }
-};
-
-// קריאה לפונקציה בכל שינוי בעגלה
-let updateBasketAndCart = () => {
-    calculation();
-    updateCartInfo();
-};
