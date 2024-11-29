@@ -51,30 +51,36 @@ a{
     background-color: #ffd60a;
     color: #fb8500;
 }
-.shop{
-    display: grid ;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.shop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* עיצוב רספונסיבי אוטומטי */
     gap: 30px;
     margin-bottom: 50px;
-
-
-@media (max-width: 1500px) {
-    .shop {
-        grid-template-columns: repeat(4, 240px);
-    }
 }
 
-@media (max-width: 1000px){
-    .shop{
-        grid-template-columns: repeat(3, 240px);
-    }
+.item {
+    border: 2px solid #fb8500;
+    border-radius: 4px;
+    text-align: center; /* מרכז את התוכן בתוך כל פריט */
 }
 
+.item img {
+    width: 100%; /* התאמה מלאה לרוחב הפריט */
+    height: auto; /* שמירת יחס רוחב-גובה */
+    object-fit: cover; /* התאמת תמונה לאזור */
+}
+
+/* רספונסיביות נוספת למסכים קטנים */
 @media (max-width: 700px) {
     .shop {
-        grid-template-columns: repeat(2, 1fr); /* 2 פריטים בשורה */
+        gap: 15px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
     }
 }
+
+
 
 @media (max-width: 400px) {
     .shop {
