@@ -57,6 +57,10 @@ a{
     gap: 30px;
     margin-bottom: 50px;
 
+@media (max-width: 1800){
+    .shop{
+        grid-template-columns: repeat(5, 240px);
+    }
 
 @media (max-width: 1500){
     .shop{
