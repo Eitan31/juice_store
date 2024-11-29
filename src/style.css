@@ -53,7 +53,7 @@ a{
 }
 .shop{
     display: grid ;
-    grid-template-columns: repeat(5, 240px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 
