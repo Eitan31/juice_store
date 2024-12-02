@@ -1,7 +1,6 @@
 import { shopItems } from "./data.js";
 let shop = document.getElementById('shop');
 let basket = JSON.parse(localStorage.getItem("data"))|| [];
-updateCartInfo();
 let generateShop = () => {
     shop.innerHTML = shopItems
         .map((x) => {
