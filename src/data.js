@@ -115,7 +115,7 @@ let dates = new Product(
     "תמרים",
     80,
     "תמונות/תמרים.webp",
-    "(2 ק"ג) תמרים מג'הול ישר מהעץ!",
+    "תמרים מג'הול ישר מהעץ!",
     "מוצרים נלווים",
     "2 קילו",
 )
@@ -147,7 +147,7 @@ pomegranateJuice.addToShopItems();
 //Product.updateProduct("pomegranate_juice", {storage: "מומלץ לשמור בהקפאה"});
 orange_juice1L.addToShopItems();
 dates.addToShopItems();
-//Product.updateProduct("dates", {shelfLife: "לפחות 6 חודשים, תלוי באחסון", storage: "מומלץ לשמור בהקפאה"});
+//Product.updateProduct("dates", {shelfLife: "לפחות 6 חודשים, תלוי באחסון", storage: "מומלץ לשמור בהקפאה", price: "80 (2 קג)});
 honey.addToShopItems();
 Product.updateProduct("honey", {storage: "מקום קריר ויבש", shelfLife: "כמעט לנצח"});
 soursoughBread.addToShopItems();
