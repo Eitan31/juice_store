@@ -282,4 +282,22 @@ a{
     font-size: 20px;
     color: #219ebc;
 }
-
+/* CSS לעיצוב ההודעה */
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+.info-content p, .info-content-cart p {
+    color: #4cc9f0; /* החלף בצבע הרצוי */
+}
+.info-content, .info-content-cart {
+    color: #4cc9f0; /* צבע לטקסט */
+}
