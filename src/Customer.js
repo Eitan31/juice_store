@@ -67,3 +67,51 @@ class Customer {
         return null;  // אם אין קובץ, לא נטען שום לקוח
     }
 }
+document.getElementById("loginChoiceBtn").addEventListener("click", function() {
+    // הצגת טופס התחברות והסתרת טופס הרשמה
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("authTitle").textContent = "התחברות";
+});
+
+document.getElementById("registerChoiceBtn").addEventListener("click", function() {
+    // הצגת טופס הרשמה והסתרת טופס התחברות
+    document.getElementById("registerForm").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("authTitle").textContent = "הרשמה";
+});
+
+// טיפול בהגשת טופס ההתחברות
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const phone = document.getElementById("loginPhone").value;
+    const name = document.getElementById("loginName").value;
+
+    // טוען את פרטי הלקוח מקובץ או LocalStorage
+    let customer = Customer.loadFromFile();
+    if (customer && customer.phone === phone && customer.name === name) {
+        alert("ההתחברות הצליחה!");
+        window.location.href = "index.html"; // העברה לדף הבית
+    } else {
+        alert("הפרטים שגויים. אנא נסה שוב.");
+    }
+});
+
+// טיפול בהגשת טופס ההרשמה
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("registerName").value;
+    const phone = document.getElementById("registerPhone").value;
+    const address = document.getElementById("registerAddress").value;
+    const notes = document.getElementById("registerNotes").value || ""; // אם לא הוזן, תישאר הערה ריקה
+
+    // יצירת אובייקט לקוח חדש ושמירה
+    let customer = new Customer(name, phone, address, notes);
+    customer.saveToFile(); // שמירה לקובץ חיצוני
+
+    alert("ההרשמה בוצעה בהצלחה!");
+    window.location.href = "login.html"; // העברה לדף התחברות
+});
+
