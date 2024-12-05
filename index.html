@@ -19,49 +19,48 @@
                 <div id="cartAmount" class="cartAmount">0</div>
             </div>
         </a>
-    </div>
 
-    <div class="auth-form">
-        <h2 id="authTitle">התחברות / הרשמה</h2>
-
-        <!-- כפתורים לבחירה אם להתחבר או להירשם -->
-        <div class="auth-choice">
-            <button id="loginChoiceBtn">התחברות</button>
-            <button id="registerChoiceBtn">הרשמה</button>
+        <!-- כפתור התחברות/הרשמה או התנתקות -->
+        <div id="authBtns" class="authBtns">
+            <!-- הכפתורים יוטענו דינמית באמצעות JavaScript -->
         </div>
-
-        <!-- טופס התחברות -->
-        <form id="loginForm" style="display:none;">
-            <label for="loginPhone">טלפון</label>
-            <input type="text" id="loginPhone" required>
-
-            <label for="loginName">שם מלא</label>
-            <input type="text" id="loginName" required>
-
-            <button type="submit">התחבר</button>
-        </form>
-
-        <!-- טופס הרשמה -->
-        <form id="registerForm" style="display:none;">
-            <label for="registerName">שם מלא</label>
-            <input type="text" id="registerName" required>
-
-            <label for="registerPhone">טלפון</label>
-            <input type="text" id="registerPhone" required>
-
-            <label for="registerAddress">כתובת</label>
-            <input type="text" id="registerAddress" required>
-
-            <label for="registerNotes">הערות</label>
-            <input type="text" id="registerNotes">
-
-            <button type="submit">הרשם</button>
-        </form>
     </div>
 
-    <script type="module" src="src/custumer.js"></script>
-    <script type="module" src="src/data.js"></script>
-    <script type="module" src="src/main.js"></script>
+    <div class="shop" id="shop">
+        <!-- תוכן החנות -->
+    </div>
 
 </body>
+<script type="module" src="src/data.js"></script>
+<script type="module" src="src/main.js"></script>
+<script>
+    // בודק אם המשתמש מחובר
+    window.onload = function() {
+        const authBtns = document.getElementById("authBtns");
+        
+        const customer = Customer.loadFromLocalStorage();
+        if (customer) {
+            // אם הלקוח מחובר
+            authBtns.innerHTML = `<button id="logoutBtn">התנתק</button>`;
+            document.getElementById("logoutBtn").addEventListener("click", function() {
+                Customer.logout();  // פונקציה להתנתקות
+                window.location.reload();  // רענון הדף לאחר ההתנתקות
+            });
+        } else {
+            // אם הלקוח לא מחובר
+            authBtns.innerHTML = `
+                <button id="loginChoiceBtn">התחבר</button>
+                <button id="registerChoiceBtn">הרשם</button>
+            `;
+
+            document.getElementById("loginChoiceBtn").addEventListener("click", function() {
+                window.location.href = "login.html";  // לדף התחברות
+            });
+
+            document.getElementById("registerChoiceBtn").addEventListener("click", function() {
+                window.location.href = "register.html";  // לדף הרשמה
+            });
+        }
+    };
+</script>
 </html>
