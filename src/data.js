@@ -113,7 +113,7 @@ let orange_juice1L = new Product(
 let dates = new Product(
     "dates",
     "תמרים",
-    80 (2 ק"ג),
+    "80 (2 ק"ג)",
     "תמונות/תמרים.webp",
     "תמרים מג'הול ישר מהעץ!",
     "מוצרים נלווים",
