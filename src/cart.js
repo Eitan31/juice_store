@@ -251,13 +251,4 @@ let showProductInfo = (id) => {
         דירוג: ${product.rating || "לא הוגדר"}
     `);
 };
-document.querySelectorAll('.info-icon').forEach(icon => {
-    icon.addEventListener('mouseenter', (e) => {
-        let content = e.target.querySelector('.info-content');
-        content.style.display = 'block'; // הצגת המידע
-    });
-    icon.addEventListener('mouseleave', (e) => {
-        let content = e.target.querySelector('.info-content');
-        content.style.display = 'none'; // הסתרת המידע
-    });
-});
+
