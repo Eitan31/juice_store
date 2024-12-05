@@ -144,7 +144,7 @@ grapefruitJuice.addToShopItems();
 pomlem.addToShopItems();
 lemonJuice.addToShopItems();
 pomegranateJuice.addToShopItems();
-Product.updateProduct("pomegranate_juice", {storage: "מומלץ לשמור בהקפאה"});
+//Product.updateProduct("pomegranate_juice", {storage: "מומלץ לשמור בהקפאה"});
 orange_juice1L.addToShopItems();
 dates.addToShopItems();
 //Product.updateProduct("dates", {shelfLife: "לפחות 6 חודשים, תלוי באחסון", storage: "מומלץ לשמור בהקפאה"});
