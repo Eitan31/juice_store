@@ -94,7 +94,6 @@ let update = (id) => {
     let quantity = search ? search.item : 0; // בדיקה אם search מוגדר
     document.getElementById(id).innerHTML = quantity; 
     calculation();
-    updateCartInfo();
 };
 
 
@@ -113,33 +112,3 @@ document.querySelectorAll('.info-icon').forEach(icon => {
         content.style.display = 'none'; // הסתרת המידע
     });
 });
-// פונקציה שמעדכנת את המידע בעגלת הקניות
-let updateCartInfo = () => {
-    let cartInfoBox = document.getElementById('cart-info-box');
-    if (basket.length === 0) {
-        cartInfoBox.innerHTML = '';  // אם אין פריטים בעגלה, לא נציג כלום
-        return;
-    }
-    
-    // אם יש פריטים בעגלה, נבנה את התצוגה
-    cartInfoBox.innerHTML = basket
-        .map((item) => {
-            let product = shopItems.find(product => product.id === item.id);
-            if (!product) return '';
-
-            // נוסיף מידע מקוצר של כל פריט
-            return `
-                <div class="cart-info-item">
-                    <p><strong>${product.name}</strong></p>
-                    <p>מחיר: ${product.price}₪</p>
-                    <p>כמות: ${item.item}</p>
-                    <p>סה"כ: ${product.price * item.item}₪</p>
-                </div>
-            `;
-        })
-        .join('');
-};
-
-// קריאה לפונקציה לעדכון המידע בעגלת הקניות
-updateCartInfo();
-
