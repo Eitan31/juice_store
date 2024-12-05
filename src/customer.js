@@ -1,5 +1,4 @@
-const fs = require('fs'); // נדרוש את המודול fs לעבודה עם קבצים
-
+// שינוי השימוש ב-LocalStorage במקום fs לדפדפן
 class Customer {
     constructor(name, phone, address, notes = "") {
         this.name = name;        // שם הלקוח
@@ -39,7 +38,7 @@ class Customer {
         this.saveToFile();  // שמירה לקובץ לאחר הסרה
     }
 
-    // פונקציה לשמירה לקובץ JSON חיצוני
+    // פונקציה לשמירה ב-LocalStorage
     saveToFile() {
         const customerData = {
             name: this.name,
@@ -48,14 +47,14 @@ class Customer {
             notes: this.notes
         };
         
-        // שמירה לקובץ "customer.json"
-        fs.writeFileSync('customer.json', JSON.stringify(customerData, null, 2), 'utf8');
+        // שמירה ב-LocalStorage
+        localStorage.setItem('customer', JSON.stringify(customerData));
     }
 
-    // פונקציה לקרוא את הנתונים מקובץ (כאשר יצרנו אובייקט חדש)
+    // פונקציה לקרוא את הנתונים מ-LocalStorage
     static loadFromFile() {
-        if (fs.existsSync('customer.json')) {
-            const rawData = fs.readFileSync('customer.json');
+        const rawData = localStorage.getItem('customer');
+        if (rawData) {
             const customerData = JSON.parse(rawData);
             return new Customer(
                 customerData.name,
@@ -64,9 +63,12 @@ class Customer {
                 customerData.notes
             );
         }
-        return null;  // אם אין קובץ, לא נטען שום לקוח
+        return null;  // אם אין נתונים, לא נטען שום לקוח
     }
 }
+
+// עדכון הפונקציות של ההתחברות והרשמה
+
 document.getElementById("loginChoiceBtn").addEventListener("click", function() {
     // הצגת טופס התחברות והסתרת טופס הרשמה
     document.getElementById("loginForm").style.display = "block";
@@ -88,7 +90,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const phone = document.getElementById("loginPhone").value;
     const name = document.getElementById("loginName").value;
 
-    // טוען את פרטי הלקוח מקובץ או LocalStorage
+    // טוען את פרטי הלקוח מ-LocalStorage
     let customer = Customer.loadFromFile();
     if (customer && customer.phone === phone && customer.name === name) {
         alert("ההתחברות הצליחה!");
@@ -109,9 +111,8 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
     // יצירת אובייקט לקוח חדש ושמירה
     let customer = new Customer(name, phone, address, notes);
-    customer.saveToFile(); // שמירה לקובץ חיצוני
+    customer.saveToFile(); // שמירה ל-LocalStorage
 
     alert("ההרשמה בוצעה בהצלחה!");
     window.location.href = "login.html"; // העברה לדף התחברות
 });
-
