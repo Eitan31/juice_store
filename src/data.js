@@ -113,9 +113,9 @@ let orange_juice1L = new Product(
 let dates = new Product(
     "dates",
     "תמרים",
-    "80 (2 ק"ג)",
+    80,
     "תמונות/תמרים.webp",
-    "תמרים מג'הול ישר מהעץ!",
+    "(2 ק"ג) תמרים מג'הול ישר מהעץ!",
     "מוצרים נלווים",
     "2 קילו",
 )
@@ -135,7 +135,7 @@ let soursoughBread = new Product(
     "תמונות/לחם.jpg",
     "לחם מחמצת",
     "מוצרים נלווים",
-    "500 גרם?",
+    "750 גרם",
 )
 orangeJuice.addToShopItems();
 lemonadeJuice.addToShopItems();
