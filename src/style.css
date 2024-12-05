@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+i{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar{
+  background-color: #fb8500;
+  color: white;  
+  padding: 25px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+
+}
+.cart {
+    position: fixed; /* משאיר את הסל באותה נקודה במסך */
+    top: 20px; /* מרחק מהחלק העליון */
+    left: 100px; /* מרחק מהחלק השמאלי */
+    background-color: #219ebc;
+    color: #fb8500;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 4px;
+    z-index: 1000; /* כדי לוודא שהוא מעל שאר האלמנטים */
+}
+
+
+
+.cartAmount{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #ffd60a;
+    color: #fb8500;
+}
+.shop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* עיצוב רספונסיבי אוטומטי */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.item {
+    border: 2px solid #fb8500;
+    border-radius: 4px;
+    text-align: center; /* מרכז את התוכן בתוך כל פריט */
+}
+
+.item img {
+    width: 100%; /* התאמה מלאה לרוחב הפריט */
+    height: auto; /* שמירת יחס רוחב-גובה */
+    object-fit: cover; /* התאמת תמונה לאזור */
+}
+
+/* רספונסיביות נוספת למסכים קטנים */
+@media (max-width: 700px) {
+    .shop {
+        gap: 15px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    .shop {
+        grid-template-columns: repeat(1, 1fr); 
+        justify-content: center; /* מרכז את הרשת */
+        gap: 10px; /* רווחים קטנים יותר */
+    }
+
+    .item {
+        width: 80%; /* פריטים תופסים את כל הרוחב */
+        margin: 0 auto; /* ממורכזים במרכז */
+        text-align: center; /* טקסט ממורכז */
+    }
+
+    .item img {
+        width: 50%; /* התאמת הרוחב לתמונה */
+        height: auto; /* גובה יחסי */
+        object-fit: cover; /* חיתוך נכון */
+        margin: auto; /* מרכז תמונות */
+        aspect-ratio: 4/3;
+    }
+
+    .details {
+        text-align: center; /* טקסט בפירוט ממורכז */
+    }
+}
+
+
+
+
+
+
+
+
+
+.item{
+    border: 2px solid #fb8500;
+    border-radius: 4px;
+}
+
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.bi-plus-lg{
+    color: green;
+
+}
+
+.bi-dash-lg{
+    color: red;
+}
+
+.item img {
+    width: 50%; /* התאמה לרוחב המיכל */
+    height: 80; /* גובה אחיד */
+    object-fit: cover; 
+    border-radius: 2px 2px 0 0; 
+}
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #a2d2ff;
+
+}
+.HomeBtn,
+.checkout,
+.removeAll{
+    background-color:  #e9c46a;
+    color: #003566;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.checkout{
+    background-color: #a7c957;
+}
+.removeAll{
+    background-color: #e63946;
+}
+
+.bi-x-lg{
+    color:  red;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    padding: 5px;
+
+}
+
+.shopping-cart{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,200px);
+    justify-content: center;
+    gap: 15px;
+
+}
+.cart-item{
+    border: 2px solid #e85d04;
+    border-radius: 5px;
+    position: relative;
+}
+.title-price-x{
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #e85d04;
+}
+.title-price{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.cart-item-price{
+    background-color: #ffe6a7;
+    color: #219ebc;
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+.item {
+    position: relative;
+}
+.info-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: alias;
+    font-size: 20px;
+    color: #219ebc;
+}
+.info-icon:hover,
+.info-icon-cart:hover {
+    color: #023047;
+}
+
+.info-content {
+    display: none; /* התוכן מוסתר ברירת מחדל */
+    background-color: #ffe5d9;
+    padding: 10px;
+    border: 1px solid #bde0fe;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 80px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.info-content-cart {
+    visibility: hidden; /* התוכן מוסתר בהתחלה */
+    background-color: #ffe5d9;
+    padding: 10px;
+    border: 1px solid #bde0fe;
+    position: absolute;
+    bottom: 100%; /* ממקם את התוכן מעל האלמנט */
+    left: 0;
+    width: 80px; /* קביעת רוחב */
+    border-radius: 5px;
+    z-index: 100;
+    transform-origin: bottom center;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; /* הוספתי סגנון לשינוי נראות בצורה חלקה */
+    opacity: 0; /* התוכן מוסתר */
+}
+
+.info-icon-cart:hover .info-content-cart {
+    visibility: visible; /* התוכן יוצג כשעכבר נמצא מעל */
+    opacity: 1; /* התוכן יופיע */
+    transition: opacity 0.3s ease-in-out, visibility 0s 0s; /* אפשר להצגת התוכן בצורה חלקה */
+}
+
+.info-icon-cart {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    cursor: alias;
+    font-size: 20px;
+    color: #219ebc;
+}
+/* CSS לעיצוב ההודעה */
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+.info-content p, .info-content-cart p {
+    color: #4cc9f0; /* החלף בצבע הרצוי */
+}
+.info-content, .info-content-cart {
+    color: #4cc9f0; /* צבע לטקסט */
+}
