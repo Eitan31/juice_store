@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנות מיצים טבעיים</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo-and-auth">
+            <a href="index.html">
+                <img src="תמונות/house.png" alt="טבעי עד הבית" class="navbar-logo">
+            </a>
+            <div class="auth-buttons">
+                <button id="loginButton" class="auth-btn">התחברות</button>
+                <button id="signupButton" class="auth-btn">הרשמה</button>
+                <button id="logoutButton" class="auth-btn" style="display:none;">התנתק</button>
+                <button id="saveUsersButton">שמור קובץ משתמשים</button>
+            </div>
+        </div>
+        <a href="cart.html">
+            <div class="cart">
+                <i class="bi bi-cart4"></i>
+                <div id="cartAmount" class="cartAmount">0</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="shop" id="shop">
+        <div class="item">
+            <img src="image.jpg" alt="Product Image">
+            <i class="bi bi-info-circle-fill info-icon"></i>
+            <div class="info-content">
+                פרטי המידע כאן
+            </div>
+            <div class="title">שם המוצר</div>
+            <div class="price">
+                <span>₪50</span>
+            </div>
+            <div class="buttons">
+                <button>הוסף לסל</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- מודאל הרשמה -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <h2>הרשמה</h2>
+            <input type="text" id="username" placeholder="שם משתמש" class="input-field" required>
+            <input type="text" id="phone" placeholder="פלאפון" class="input-field" required>
+            <select id="city" class="input-field" required>
+                <option value="" disabled selected>בחר יישוב</option>
+                <option value="עומר">עומר</option>
+                <option value="להבים">להבים</option>
+                <option value="מיתר">מיתר</option>
+                <option value="כרמים">כרמים</option>
+                <option value="באר שבע">באר שבע</option>
+                <option value="אחר">אחר</option>
+            </select>
+            <input type="text" id="address" placeholder="כתובת" class="input-field" required>
+            <div class="password-field-container">
+                <input type="password" class="password-input" placeholder="סיסמה" />
+                <button class="password-toggle-btn">הצג</button>
+            </div>
+            <button id="submitSignup" class="auth-submit">הרשם</button>
+            <button class="close-modal">סגור</button>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>התחברות</h2>
+            <input type="text" id="loginUsername" placeholder="שם משתמש" class="input-field" required>
+            <div class="password-field-container">
+                <input type="password" class="password-input" placeholder="סיסמה" />
+                <button class="password-toggle-btn">הצג</button>
+            </div>
+            <button id="submitLogin" class="auth-submit">התחבר</button>
+            <button id="forgotPasswordButton">שכחתי סיסמה</button>
+            <button class="close-modal">סגור</button>
+        </div>
+    </div>
+
+    <!-- טופס לשכחת סיסמה -->
+    <div id="forgotPasswordModal" class="modal" style="display:none;">
+        <h3>שכחתי סיסמה</h3>
+        <input type="text" id="forgotUsername" placeholder="שם משתמש">
+        <input type="text" id="forgotPhone" placeholder="טלפון">
+        <button id="submitForgotPassword">שלח קוד</button>
+        <button class="close-modal">סגור</button>
+    </div>
+
+
+    <!-- טופס שינוי סיסמה -->
+    <div id="changePasswordModal" class="modal" style="display:none;">
+        <h3>שנה סיסמה</h3>
+        <input type="password" id="newPassword" placeholder="סיסמה חדשה" class="input-field" required>
+        <button id="submitChangePassword" class="auth-submit">שנה סיסמה</button>
+        <button class="close-modal">סגור</button>
+    </div>
+
+    <script type="module" src="src/data.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
