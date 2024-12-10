@@ -674,7 +674,7 @@ body {
 }
 
 #loginModal {
-    display: flex; /* שימוש ב-flexbox */
+    display: none; /* שימוש ב-flexbox */
     justify-content: center; /* למרכז אופקית */
     align-items: center; /* למרכז אנכית */
     position: fixed; /* מיקום קבוע */
