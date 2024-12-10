@@ -50,7 +50,7 @@ export let shopItems = [];
 let orangeJuice = new Product(
     "orange_juice",
     "תפוזים",
-    29,
+    34,
     "תמונות/תפוזים.jpg",
     "מיץ תפוזים סחוט טבעי",
 );
@@ -72,7 +72,7 @@ let appleJuice = new Product(
 let grapefruitJuice = new Product(
     "grapefruit_juice",
     "אשכוליות",
-    29,
+    28,
     "תמונות/אשכוליות.png",
     "מיץ אשכוליות טבעי",
 );
@@ -104,7 +104,7 @@ let pomegranateJuice = new Product(
 let orange_juice1L = new Product(
     "orange_juice1L",
     "תפוזים ליטר",
-    20,
+    25,
     "תמונות/תפוז1.jpg",
     "מיץ תפוזים סחוט טבעי",
     "מיצים ליטר",
@@ -115,7 +115,7 @@ let dates = new Product(
     "תמרים",
     80,
     "תמונות/תמרים.webp",
-    "תמרים מג'הול ישר מהעץ!",
+    "(2 קילו)תמרים מג'הול ישר מהעץ!",
     "מוצרים נלווים",
     "2 קילו",
 )
@@ -135,7 +135,25 @@ let soursoughBread = new Product(
     "תמונות/לחם.jpg",
     "לחם מחמצת",
     "מוצרים נלווים",
-    "500 גרם?",
+    "750 גרם",
+)
+let oliveOil2L = new Product(
+    "olive_oil2L",
+    "שמן זית",
+    130,
+    "תמונות/שמן2.png",
+    "שמן זית משק אחיה 2 ליטר",
+    "מוצרים נלווים",
+    "2 ליטר",
+)
+let oliveOil5L = new Product(
+    "olive_oil5L",
+    "שמן זית",
+    290,
+    "תמונות/שמן5.png",
+    "שמן זית משק אחיה 5 ליטר",
+    "מוצרים נלווים",
+    "5 ליטר",
 )
 orangeJuice.addToShopItems();
 lemonadeJuice.addToShopItems();
@@ -144,6 +162,9 @@ grapefruitJuice.addToShopItems();
 pomlem.addToShopItems();
 lemonJuice.addToShopItems();
 pomegranateJuice.addToShopItems();
+oliveOil2L.addToShopItems();
+oliveOil5L.addToShopItems();
+
 //Product.updateProduct("pomegranate_juice", {storage: "מומלץ לשמור בהקפאה"});
 orange_juice1L.addToShopItems();
 dates.addToShopItems();
