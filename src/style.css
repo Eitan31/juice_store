@@ -201,7 +201,7 @@ body {
 }
 
 .HomeBtn, .checkout, .removeAll {
-    background-color: #e9c46a;
+    background-color: red;
     color: #003566;
     border: none;
     padding: 10px 20px;
