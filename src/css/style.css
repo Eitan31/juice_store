@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.navbar {
+    background-color: #fb8500;
+    color: white;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+
+.logo-and-auth {
+    display: flex;
+    align-items: center; /* יישור אנכי */
+    justify-content: flex-start; /* מתחילים מהקצה השמאלי */
+    gap: 155px; /* רווחים קטנים יותר בין התמונה והכותרת */
+    text-align: center;
+    direction: rtl; /* כיוון העיצוב מתאים לעברית */
+}
+
+.logo-and-auth img {
+    margin-left: auto; /* הצמדת התמונה לקצה הימני */
+    max-height: 100px; /* גובה קטן יותר */
+    max-width: 150px; /* רוחב קטן יותר */
+    object-fit: contain; /* שמירה על פרופורציות */
+}
+
+#cartTitle {
+    font-size: 1.5em; /* גודל הטקסט */
+    margin: 0;
+    text-align: center;
+}
+
+
+.cart {
+    position: fixed;
+    top: 20px;
+    left: 100px;
+    background-color: #219ebc;
+    color: #fb8500;
+    padding: 5px;
+    font-size: 50px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.cartAmount {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #ffd60a;
+    color: #fb8500;
+}
+
+.shop {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin:0 10px;
+    padding: 0 10px;
+}
+
+.item {
+    border: 2px solid #fb8500;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 8; /* הגדלתי את הריפוד בתוך האובייקט */
+    transition: transform 0.3s ease;
+    height: 250px; /* הגדלתי את הגובה של האובייקט */
+    width: 250px; /* הרחבתי את הרוחב של האובייקט */
+
+}
+.item:hover {
+    transform: scale(1.05); /* הגדלה קלה של המוצר */
+}
+.item, .cart-item {
+    min-height: 300px; /* גובה אחיד */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* שמירה על פרופורציה */
+}
+
+
+
+
+.item img {
+    width: 120px;
+    max-width: 100%; /* גבול רוחב לתמונה */
+    max-height: 150px; /* גבול גובה לתמונה */
+    height: 120px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.item .title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #003566; /* הצבע של הכותרת */
+    margin-bottom: 10px;
+    width: 100%; /* גרום לכותרת לתפוס את כל רוחב האובייקט */
+    text-align: center;
+    overflow: hidden;
+    display: block; /* מוודא שהכותרת תשתמש בכל רוחב המסך */
+    white-space: nowrap; /* טקסט בשורה אחת בלבד */
+    text-overflow: ellipsis; /* הוספת "..." כשיש חריגה */
+}
+
+
+
+.info-icon {
+    position: relative;
+    bottom: 10px; /* המיקום התחתון של האייקון */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #219ebc;
+    cursor: pointer;
+}
+
+.info-content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #003566;
+    color: #a2d2ff;
+    padding: 10px;
+    border-radius: 4px;
+    width: 160px;
+    text-align: center;
+    z-index: 10;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.item:hover .info-content {
+    display: block;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.price .amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fb8500;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.bi-plus-lg {
+    color: green; /* צבע ירוק לפלוס */
+}
+
+.bi-dash-lg {
+    color: red; /* צבע אדום למינוס */
+}
+
+.bi-plus-lg, .bi-dash-lg {
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease; /* הוספתי טרנספומר שגורם לשינוי צבע וגדילה */
+}
+
+.bi-plus-lg:hover, .bi-dash-lg:hover {
+    transform: scale(1.2); /* הגדלת הפלוס והמינוס */
+}
+
+
+
+.item .quantity {
+    width: 50px;  /* רוחב אחיד לכל כמות */
+    text-align: center;  /* יישור הטקסט למרכז */
+    font-size: 18px;  /* גודל טקסט ברור */
+    padding: 0px;
+    border: 1px solid #fb8500; /* גבול יותר בולט */
+    border-radius: 1px;
+    background-color: #f4f4f4; /* צבע רקע בהיר */
+    margin: 2px;  /* מרווח בין הפלוס והמינוס */
+}
+
+
+
+
+.input-field {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-submit {
+    background-color: #21bc5a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background-color: #024722;
+}
+
+.close-modal {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+.HomeBtn, .checkout, .removeAll {
+    background-color: #e9c46a;
+    color: #003566;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.HomeBtn:hover, .checkout:hover, .removeAll:hover {
+    background-color: #023047;
+}
+
+.checkout {
+    background-color: #a7c957;
+}
+
+.removeAll {
+    background-color: #e63946;
+}
+@media (max-width: 2500) {
+    .shop {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+    }
+}
+@media (max-width: 2000px) {
+    .shop {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+    }
+}
+@media (max-width: 1500px) {
+    .shop {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+    }
+}
+
+@media (max-width: 1000px) {
+    .shop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+    }
+    .item{
+        width: 100%; /* מותאם לרוחב */
+        margin: 0 auto; /* ממורכז */
+    }
+}
+
+@media (max-width: 700px) {
+    .shop {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* מרווחים קטנים יותר */
+    }
+    .item img {
+        width: 100%; /* ודא שהתמונות ממלאות את הרוחב */
+        
+    }
+    .item{
+        width: 100%; /* מותאם לרוחב */
+        margin: 0 auto; /* ממורכז */
+    }
+    
+}
+
+
+
+@media (max-width: 400px) {
+    .shop {
+        grid-template-columns: repeat(1, 1fr); 
+        justify-content: center; /* מרכז את הרשת */
+        gap: 10px; /* רווחים קטנים יותר */
+    }
+
+    .item {
+        width: 80%; /* פריטים תופסים את כל הרוחב */
+        margin: 0 auto; /* ממורכזים במרכז */
+        text-align: center; /* טקסט ממורכז */
+    }
+
+    .item img {
+        width: 50%; /* התאמת הרוחב לתמונה */
+        height: auto; /* גובה יחסי */
+        object-fit: cover; /* חיתוך נכון */
+        margin: auto; /* מרכז תמונות */
+        aspect-ratio: 4/3;
+    }
+
+    .details {
+        text-align: center; /* טקסט בפירוט ממורכז */
+    }
+}

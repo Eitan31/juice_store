@@ -1,0 +1,321 @@
+/* הסטייל לכפתורים העליונים */
+#label {
+    position: sticky;
+    top: 0;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+    font-size: 18px;
+}
+
+/* עדכון מחיר כולל */
+#label h2 {
+    background-color: #8ecae6;
+    color: #001d3d; /* צבע כחול בהיר לטקסט */
+    margin: 0;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase; /* מגדיל את הבולטות של הטקסט */
+    letter-spacing: 2px; /* מרווח בין האותיות */
+    width: fit-content; /* הכותרת לא תתפוס את כל השורה */
+    margin: 0 auto; /* ממרכז את הכותרת */
+    font-family: 'Lobster', cursive;
+}
+
+/* כפתורי הסל: "הסרת כל הפריטים" ו-"בצע הזמנה" */
+#label .checkout, 
+#label .removeAll {
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#label .removeAll:hover {
+    background-color: darkred;
+}
+
+#label .checkout:hover{
+    background-color: darkgreen;
+}
+/* שמירה על כפתורים בשורה אחת */
+#label .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* הדגש על הסרה מוחלטת של כפתור המיקום */
+#label .checkout,
+#label .removeAll {
+    width: auto;
+    flex: 1;
+}
+
+/* חלון עגלת קניות */
+#shopping-cart {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.cart-item {
+    border: 2px solid #fb8500;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 200px; /* ייתכן ותרצה להגדיל את הגובה כדי להכיל את כל התוכן */
+    width: 100%;
+    max-width: 180px;
+    position: relative;
+}
+
+/* גודל הטקסט בכותרת */
+.cart-item .title {
+    font-size: 12px; /* הקטנתי את גודל הטקסט */
+    font-weight: bold;
+    color: #003566;
+    margin-bottom: 5px; /* הקטנתי את המרווח */
+}
+/* גודל התמונה */
+.cart-item img {
+    width: 70px; /* הקטנתי את רוחב התמונה */
+    height: 70px; /* הקטנתי את גובה התמונה */
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+
+
+/* כפתורים בתוך ה-cart-item */
+.cart-item .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    padding: 0 10px;
+}
+/* כפתור כמות */
+.cart-item .quantity {
+    width: 35px; /* הקטנתי את הרוחב של כפתור הכמות */
+    text-align: center;
+    font-size: 16px; /* הקטנתי את הגודל של הטקסט */
+    padding: 5px;
+    border: 1px solid #fb8500;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+.cart-item .title-price-x {
+    font-size: 18px;
+    font-weight: bold;
+    color: #003566;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.cart-item .bi-plus-lg,
+.cart-item .bi-dash-lg {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-item .price {
+    font-size: 14px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px; /* ממקם את המחיר הכי למטה */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.info-content-cart {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #003566;
+    color: #a2d2ff;
+    padding: 10px;
+    border-radius: 4px;
+    width: 160px;
+    text-align: center;
+    z-index: 10;
+    white-space: nowrap;  /* מונע את מעבר הטקסט לשורות נוספות */
+    font-size: 12px;
+}
+
+.info-icon-cart {
+    position: absolute;  /* ממקם את האייקון במיקום קבוע */
+    top: 50%;  /* מרחק של 10px מהחלק העליון */
+    left: 50%;  /* ממקם את האייקון במרכז הרוחב */
+    transform: translateX(-50%);  /* ממקם את האייקון בדיוק במרכז */
+    cursor: alias;
+    font-size: 20px;
+    color: #219ebc;
+}
+
+.info-icon-cart:hover .info-content-cart {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0s;
+}
+
+/* שינוי במיקום המחיר הכולל */
+#shopping-cart .total-price {
+    background-color: #003566;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+/* הכפתורים למחיקת הכל וביצוע הזמנה באותה שורה */
+#shopping-cart .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 10px;
+    z-index: 10;
+}
+
+#shopping-cart .clear-all-btn, 
+#shopping-cart .checkout-btn {
+    font-size: 16px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* כפתור ה-X יהיה בכל אובייקט */
+.cart-item .bi-x-lg {
+    color: red;
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+#shopping-cart .item, 
+#shopping-cart .cart-item {
+    height: 220px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shopping-cart .item img, 
+#shopping-cart .cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+#shopping-cart .item .title, 
+#shopping-cart .cart-item .title {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#shopping-cart .item .buttons, 
+#shopping-cart .cart-item .buttons {
+    gap: 10px;
+}
+
+#shopping-cart .item .price, 
+#shopping-cart .cart-item .price {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#shopping-cart .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#shopping-cart .checkout-btn {
+    background-color: gray;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#shopping-cart .checkout-btn:hover {
+    background-color: #d6292c;
+}
+
+/* שינוי הפונקציה sticky לכפתור מחק כל פריט - לא משנה את העיצוב שלה */
+#shopping-cart .cart-item .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    position: sticky;
+    top: 100px;
+}
+/* כפתור חזרה למסך הבית */
+.HomeBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f4a261; /* צבע רקע מותאם */
+    color: white;
+    transition: background-color 0.3s ease;
+    width: auto; /* לא למלא את כל הרוחב */
+    margin: 10px auto; /* ממרכז את הכפתור */
+}
+
+/* כפתור חזרה למסך הבית בזמן ריחוף */
+.HomeBtn:hover {
+    background-color: #fb8500; /* שינוי צבע רקע */
+}
