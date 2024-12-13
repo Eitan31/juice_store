@@ -187,10 +187,10 @@ select {
 .logo-and-auth {
     display: flex;
     align-items: center; /* יישור אנכי */
-    justify-content: flex-start; /* מתחילים מהקצה השמאלי */
-    gap: 155px; /* רווחים קטנים יותר בין התמונה והכותרת */
+    justify-content: center; /* מתחילים מהקצה השמאלי */
     text-align: center;
     direction: rtl; /* כיוון העיצוב מתאים לעברית */
+    
 }
 
 .logo-and-auth img {
@@ -199,22 +199,49 @@ select {
     max-width: 150px; /* רוחב קטן יותר */
     object-fit: contain; /* שמירה על פרופורציות */
 }
+
+
+
+/* מיכל הכפתורים */
+.auth-buttons-container {
+    display: flex; /* מציב את הכפתורים בשורה */
+    justify-content: center; /* ממקם את הכפתורים במרכז */
+    align-items: center; /* ממקם את הכפתורים במרכז */
+    height: 100vh; /* גובה מלא של המסך */
+    flex-direction: column; /* הכפתורים יהיו זה על זה */
+}
+
 /* כפתורי ההתחברות וההרשמה */
 .auth-buttons {
     display: flex; /* מציב את הכפתורים בשורה */
     flex-direction: column; /* הכפתורים יהיו זה על זה */
-    margin-left: 10px; /* רווח קטן בין הלוגו לכפתורים */
+    justify-content: center; /* ממקם את הכפתורים במרכז */
+    align-items: center; /* ממקם את הכפתורים במרכז אופקית */
+    position: fixed; /* מאפשר למקם את האלמנט בעמדה קבועה */
+    top: 20px; /* מרחק מהחלק העליון של המסך */
+    left: 50%; /* ממקם את האלמנט במרכז אופקית */
+    transform: translateX(-50%); /* מתקן את המיקום כדי שיהיה בדיוק במרכז */
+    width: auto; /* לא תופס את כל הרוחב */
+    z-index: 1000; /* מבטיח שהכפתורים יהיו מעל אלמנטים אחרים */
 }
+
+
 /* עיצוב כפתורי התחברות והרשמה */
 .auth-btn {
     background-color: #4CAF50; /* ירוק */
     color: white;
-    padding: 6px 16px; 
+    padding: 10px 20px;  /* ריפוד אחיד */
     font-size: 14px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: auto; /* הכפתור יתפוס את כל הרוחב */
+    width: 100%; /* הכפתור יתפוס את כל הרוחב */
+    max-width: 200px; /* הגבלת רוחב למקסימום */
     margin: 5px 0; /* רווחים בין הכפתורים */
+    text-align: center; /* ממקם את הטקסט במרכז */
+}
+
+.auth-btn:hover {
+    background-color: #45a049;
 }
