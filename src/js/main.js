@@ -7,7 +7,7 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 // פונקציה לשליפת מוצרים מהשרת
 async function fetchProducts() {
   try {
-    const response = await fetch('./src/json/products.json');
+    const response = await fetch('https://eitan31.github.io/Tiv-i-Ad-HaBayit/src/json/products.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
