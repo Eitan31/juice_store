@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ניהול משתמשים ומוצרים</h1>
+    </header>
+    <main>
+        <a href="index.html">
+            <img src="https://www.dropbox.com/scl/fi/2g3fexz0my5hraoo0qvnq/house.png?rlkey=4tr7zrib6i9o3uglvot4hcswt&raw=1" alt="טבעי עד הבית" class="navbar-logo">
+        </a>
+        <section id="userManagement">
+            <h2>משתמשים</h2>
+            <select id="cityFilter">
+                <option value="all">כל הערים</option>
+                <option value="lehavim">להבים</option>
+                <option value="omer">עומר</option>
+                <option value="meitar">מיתר</option>
+            </select>
+            <button id="loadUsers">טען משתמשים</button>
+            <button id="addUserBtn">הוסף משתמש</button>
+            <button id="hideUsersButton">הסתר משתמשים</button>
+            <div id="userList"></div>
+        </section>
+        <section id="productManagement">
+            <h2>מוצרים</h2>
+            <button id="loadProducts">טען מוצרים</button>
+            <div id="productList"></div>
+            <button id="addProductButton">הוסף מוצר חדש</button>
+        </section>
+        <button id="hideDetailsButton">הסתר את כל הפרטים</button>
+    </main>
+    <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

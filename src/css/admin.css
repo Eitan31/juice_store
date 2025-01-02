@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+}
+.navbar-logo {
+    width: 100px;
+    height: auto;
+}
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 15px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+#userList, #productList {
+    margin-top: 20px;
+}
+
+/* סגנונות לטופס עריכת מוצר */
+#editProductForm {
+    display: none; /* התחל עם הטופס מוסתר */
+    position: fixed; /* הצג את הטופס במרכז המסך */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* ודא שהטופס מעל שאר האלמנטים */
+}
+
+/* סגנונות לשדות בטופס */
+#editProductForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#editProductForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* סגנון לכפתור ביטול */
+#cancelEditButton {
+    background: #d9534f; /* צבע אדום */
+}
+
+#cancelEditButton:hover {
+    background: #c9302c; /* צבע אדום כהה */
+}
