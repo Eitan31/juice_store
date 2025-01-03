@@ -16,7 +16,7 @@ let calculation = () => {
 // פונקציה לטעינת המוצרים מה-JSON
 async function loadProducts() {
     try {
-        const response = await fetch('json/products.json');
+    const response = await fetch('https://eitan31.github.io/Tiv-i-Ad-HaBayit/src/json/products.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
